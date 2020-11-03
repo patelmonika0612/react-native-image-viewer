@@ -560,7 +560,11 @@ export default class ImageViewer extends React.Component<Props, State> {
               minScale={this.props.minScale}
               maxScale={this.props.maxScale}
             >
-              {this!.props!.renderImage!(image.props)}
+              {/* {this!.props!.renderImage!(image.props)} */}
+              {this!.props!.renderImage!({
+                imageUrls: this.props.imageUrls,
+                index: index
+              })}
             </ImageZoom>
           );
         case 'fail':
